@@ -104,7 +104,6 @@
             this.Sifretextbox.PasswordChar = '*';
             this.Sifretextbox.Size = new System.Drawing.Size(288, 33);
             this.Sifretextbox.TabIndex = 4;
-            this.Sifretextbox.UseSystemPasswordChar = true;
             // 
             // LoginButton
             // 

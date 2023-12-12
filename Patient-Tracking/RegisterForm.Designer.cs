@@ -148,7 +148,6 @@
             this.Kayıtsifretext.PasswordChar = '*';
             this.Kayıtsifretext.Size = new System.Drawing.Size(288, 33);
             this.Kayıtsifretext.TabIndex = 9;
-            this.Kayıtsifretext.UseSystemPasswordChar = true;
             // 
             // backtologinbutton
             // 

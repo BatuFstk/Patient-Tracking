@@ -8,7 +8,7 @@ using Google.Cloud.Firestore;
 namespace Patient_Tracking.Class
 {
     [FirestoreData]
-    internal class UserData
+    public class UserData
     {
         [FirestoreProperty]
         public string Username { get; set; }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace Patient_Follow_Up.Class
+namespace Patient_Tracking
 {
     internal static class FirestoreHelper
     {

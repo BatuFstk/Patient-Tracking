@@ -171,6 +171,7 @@
     <Compile Include="Class\FirestoreHelper.cs" />
     <Compile Include="Class\PatientData.cs" />
     <Compile Include="Class\Security.cs" />
+    <Compile Include="Class\SessionManager.cs" />
     <Compile Include="Class\UserData.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>

@@ -46,11 +46,18 @@
             this.Hastasoyisim = new System.Windows.Forms.TextBox();
             this.Hastabarkodno = new System.Windows.Forms.TextBox();
             this.Hastadogumdatetime = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.hastagiristarihDatetime = new System.Windows.Forms.DateTimePicker();
+            this.HastaOnayDateTime = new System.Windows.Forms.DateTimePicker();
+            this.hastasonuctarihidate = new System.Windows.Forms.DateTimePicker();
+            this.CinsiyetCombobox = new System.Windows.Forms.ComboBox();
+            this.SilButton = new System.Windows.Forms.Button();
+            this.EkleButton = new System.Windows.Forms.Button();
+            this.AllDeleteButton = new System.Windows.Forms.Button();
+            this.HastalariGoruntule = new System.Windows.Forms.DataGridView();
+            this.Welcomelabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HastalariGoruntule)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -234,35 +241,105 @@
             this.Hastadogumdatetime.TabIndex = 27;
             this.Hastadogumdatetime.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // dateTimePicker1
+            // hastagiristarihDatetime
             // 
-            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.White;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(146, 601);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(288, 31);
-            this.dateTimePicker1.TabIndex = 28;
+            this.hastagiristarihDatetime.CalendarMonthBackground = System.Drawing.Color.White;
+            this.hastagiristarihDatetime.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.hastagiristarihDatetime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.hastagiristarihDatetime.Location = new System.Drawing.Point(146, 601);
+            this.hastagiristarihDatetime.Name = "hastagiristarihDatetime";
+            this.hastagiristarihDatetime.Size = new System.Drawing.Size(288, 31);
+            this.hastagiristarihDatetime.TabIndex = 28;
             // 
-            // dateTimePicker2
+            // HastaOnayDateTime
             // 
-            this.dateTimePicker2.CalendarMonthBackground = System.Drawing.Color.White;
-            this.dateTimePicker2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(146, 671);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(288, 31);
-            this.dateTimePicker2.TabIndex = 29;
+            this.HastaOnayDateTime.CalendarMonthBackground = System.Drawing.Color.White;
+            this.HastaOnayDateTime.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.HastaOnayDateTime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.HastaOnayDateTime.Location = new System.Drawing.Point(146, 671);
+            this.HastaOnayDateTime.Name = "HastaOnayDateTime";
+            this.HastaOnayDateTime.Size = new System.Drawing.Size(288, 31);
+            this.HastaOnayDateTime.TabIndex = 29;
             // 
-            // dateTimePicker3
+            // hastasonuctarihidate
             // 
-            this.dateTimePicker3.CalendarMonthBackground = System.Drawing.Color.White;
-            this.dateTimePicker3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(146, 735);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(288, 31);
-            this.dateTimePicker3.TabIndex = 30;
+            this.hastasonuctarihidate.CalendarMonthBackground = System.Drawing.Color.White;
+            this.hastasonuctarihidate.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.hastasonuctarihidate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.hastasonuctarihidate.Location = new System.Drawing.Point(146, 735);
+            this.hastasonuctarihidate.Name = "hastasonuctarihidate";
+            this.hastasonuctarihidate.Size = new System.Drawing.Size(288, 31);
+            this.hastasonuctarihidate.TabIndex = 30;
+            // 
+            // CinsiyetCombobox
+            // 
+            this.CinsiyetCombobox.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.CinsiyetCombobox.FormattingEnabled = true;
+            this.CinsiyetCombobox.Items.AddRange(new object[] {
+            "Erkek",
+            "Kadın"});
+            this.CinsiyetCombobox.Location = new System.Drawing.Point(146, 468);
+            this.CinsiyetCombobox.Name = "CinsiyetCombobox";
+            this.CinsiyetCombobox.Size = new System.Drawing.Size(288, 31);
+            this.CinsiyetCombobox.TabIndex = 31;
+            // 
+            // SilButton
+            // 
+            this.SilButton.BackColor = System.Drawing.Color.CadetBlue;
+            this.SilButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.SilButton.Location = new System.Drawing.Point(816, 194);
+            this.SilButton.Name = "SilButton";
+            this.SilButton.Size = new System.Drawing.Size(194, 48);
+            this.SilButton.TabIndex = 32;
+            this.SilButton.Text = "SİL";
+            this.SilButton.UseVisualStyleBackColor = false;
+            this.SilButton.Click += new System.EventHandler(this.SilButton_Click);
+            // 
+            // EkleButton
+            // 
+            this.EkleButton.BackColor = System.Drawing.Color.CadetBlue;
+            this.EkleButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.EkleButton.Location = new System.Drawing.Point(480, 194);
+            this.EkleButton.Name = "EkleButton";
+            this.EkleButton.Size = new System.Drawing.Size(194, 48);
+            this.EkleButton.TabIndex = 33;
+            this.EkleButton.Text = "EKLE";
+            this.EkleButton.UseVisualStyleBackColor = false;
+            this.EkleButton.Click += new System.EventHandler(this.EkleButton_Click);
+            // 
+            // AllDeleteButton
+            // 
+            this.AllDeleteButton.BackColor = System.Drawing.Color.CadetBlue;
+            this.AllDeleteButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.AllDeleteButton.Location = new System.Drawing.Point(1141, 194);
+            this.AllDeleteButton.Name = "AllDeleteButton";
+            this.AllDeleteButton.Size = new System.Drawing.Size(194, 48);
+            this.AllDeleteButton.TabIndex = 34;
+            this.AllDeleteButton.Text = "TÜMÜNÜ SİL";
+            this.AllDeleteButton.UseVisualStyleBackColor = false;
+            this.AllDeleteButton.Click += new System.EventHandler(this.AllDeleteButton_Click);
+            // 
+            // HastalariGoruntule
+            // 
+            this.HastalariGoruntule.BackgroundColor = System.Drawing.Color.CadetBlue;
+            this.HastalariGoruntule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.HastalariGoruntule.GridColor = System.Drawing.Color.Black;
+            this.HastalariGoruntule.Location = new System.Drawing.Point(480, 265);
+            this.HastalariGoruntule.Name = "HastalariGoruntule";
+            this.HastalariGoruntule.Size = new System.Drawing.Size(855, 501);
+            this.HastalariGoruntule.TabIndex = 35;
+            // 
+            // Welcomelabel
+            // 
+            this.Welcomelabel.AutoSize = true;
+            this.Welcomelabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Welcomelabel.ForeColor = System.Drawing.Color.CadetBlue;
+            this.Welcomelabel.Location = new System.Drawing.Point(22, 125);
+            this.Welcomelabel.Name = "Welcomelabel";
+            this.Welcomelabel.Size = new System.Drawing.Size(52, 19);
+            this.Welcomelabel.TabIndex = 36;
+            this.Welcomelabel.Text = "LABEL";
+            this.Welcomelabel.Click += new System.EventHandler(this.label12_Click);
             // 
             // Anasayfa
             // 
@@ -270,9 +347,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1365, 849);
-            this.Controls.Add(this.dateTimePicker3);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.Welcomelabel);
+            this.Controls.Add(this.HastalariGoruntule);
+            this.Controls.Add(this.AllDeleteButton);
+            this.Controls.Add(this.EkleButton);
+            this.Controls.Add(this.SilButton);
+            this.Controls.Add(this.CinsiyetCombobox);
+            this.Controls.Add(this.hastasonuctarihidate);
+            this.Controls.Add(this.HastaOnayDateTime);
+            this.Controls.Add(this.hastagiristarihDatetime);
             this.Controls.Add(this.Hastadogumdatetime);
             this.Controls.Add(this.Hastabarkodno);
             this.Controls.Add(this.Hastasoyisim);
@@ -290,10 +373,12 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
             this.Name = "Anasayfa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Anasayfa";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HastalariGoruntule)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,8 +404,14 @@
         private System.Windows.Forms.TextBox Hastasoyisim;
         private System.Windows.Forms.TextBox Hastabarkodno;
         private System.Windows.Forms.DateTimePicker Hastadogumdatetime;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.DateTimePicker hastagiristarihDatetime;
+        private System.Windows.Forms.DateTimePicker HastaOnayDateTime;
+        private System.Windows.Forms.DateTimePicker hastasonuctarihidate;
+        private System.Windows.Forms.ComboBox CinsiyetCombobox;
+        private System.Windows.Forms.Button SilButton;
+        private System.Windows.Forms.Button EkleButton;
+        private System.Windows.Forms.Button AllDeleteButton;
+        private System.Windows.Forms.DataGridView HastalariGoruntule;
+        private System.Windows.Forms.Label Welcomelabel;
     }
 }
