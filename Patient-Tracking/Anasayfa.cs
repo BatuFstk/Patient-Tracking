@@ -207,5 +207,70 @@ namespace Patient_Tracking
                 }
             }
         }
+
+        private async void Guncelle_Click(object sender, EventArgs e)
+        {
+            if (HastalariGoruntule.SelectedRows.Count > 0)
+            {
+                int selectedRowIndex = HastalariGoruntule.SelectedRows[0].Index;
+                string tcToUpdate = Convert.ToString(HastalariGoruntule.Rows[selectedRowIndex].Cells["Tc"].Value);
+
+                // İlgili hasta verisinin referansını al
+                DocumentReference docRefToUpdate = FirestoreHelper.Database
+                    .Collection("UserData").Document(loggedInUser.Username)
+                    .Collection("Patients").Document(tcToUpdate);
+
+                // Güncellenecek hasta verisinin mevcut değerlerini al
+                var existingPatient = (await docRefToUpdate.GetSnapshotAsync()).ConvertTo<PatientData>();
+
+                // Yeni değerleri kullanıcıdan al veya mevcut değerleri kullanmasını sağla
+                var updatedPatient = new PatientData
+                {
+                    Tc = existingPatient.Tc,
+                    Name = string.IsNullOrEmpty(Hastaisim.Text) ? existingPatient.Name : Hastaisim.Text,
+                    Surname = string.IsNullOrEmpty(Hastasoyisim.Text) ? existingPatient.Surname : Hastasoyisim.Text,
+                    Birth = DateTime.SpecifyKind(Hastadogumdatetime.Value, DateTimeKind.Utc),
+                    Gender = CinsiyetCombobox.SelectedIndex == -1 ? existingPatient.Gender : CinsiyetCombobox.SelectedIndex,
+                    Barcode = string.IsNullOrEmpty(Hastabarkodno.Text) ? existingPatient.Barcode : Hastabarkodno.Text,
+                    EntryDate = DateTime.SpecifyKind(hastagiristarihDatetime.Value, DateTimeKind.Utc),
+                    AcceptDate = DateTime.SpecifyKind(HastaOnayDateTime.Value, DateTimeKind.Utc),
+                    ResultDate = DateTime.SpecifyKind(hastasonuctarihidate.Value, DateTimeKind.Utc),
+                };
+
+                try
+                {
+                    // Hasta verisini güncelle
+                    await docRefToUpdate.SetAsync(updatedPatient);
+
+                    // DataGridView'ı güncelle
+                    UpdateDataGridView();
+
+                    MessageBox.Show("Hasta verisi güncellendi.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Bir hata oluştu: " + ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Lütfen güncellemek istediğiniz hastayı seçin.");
+            }
+        }
+        private void Anasayfa_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SifreDegistirme_Click(object sender, EventArgs e)
+        {
+            SifreChange sifreChangeForm = new SifreChange(loggedInUser);
+
+            // Bu formu gizleyin
+            
+
+            // SifreChange formunu gösterin
+            sifreChangeForm.Show();
+        }
     }
 }

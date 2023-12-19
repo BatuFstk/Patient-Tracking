@@ -46,7 +46,7 @@ namespace Patient_Tracking
 
                 if (data != null)
                 {
-                    if (password == Security.Decrypt(data.Password))
+                    if (password == (data.Password))
                     {
                         MessageBox.Show("Giriş Başarılı!");
                         Hide();

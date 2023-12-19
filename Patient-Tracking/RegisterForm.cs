@@ -61,7 +61,7 @@ namespace Patient_Tracking
         private UserData GetWriteData()
         {
             string username = Kayıttckimliktext.Text.Trim();
-            string password = Security.Encrypt(Kayıtsifretext.Text);
+            string password = Kayıtsifretext.Text;
             string docadi = DoktorAdi.Text.Trim();
             string docsoyadi = DoktorSoyadi.Text.Trim();
 

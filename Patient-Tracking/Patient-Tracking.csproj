@@ -187,6 +187,12 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SifreChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SifreChange.Designer.cs">
+      <DependentUpon>SifreChange.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Anasayfa.resx">
       <DependentUpon>Anasayfa.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,6 +211,9 @@
     </Compile>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SifreChange.resx">
+      <DependentUpon>SifreChange.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
