@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,10 +57,10 @@
             this.Welcomelabel = new System.Windows.Forms.Label();
             this.Guncelle = new System.Windows.Forms.Button();
             this.SifreDegistirme = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.basincdeger = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.HastalariGoruntule)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HastalariGoruntule)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -72,6 +73,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1365, 109);
             this.panel1.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Patient_Tracking.Properties.Resources.Adsız;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(118, 109);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -342,7 +352,7 @@
             this.Guncelle.Name = "Guncelle";
             this.Guncelle.Size = new System.Drawing.Size(194, 48);
             this.Guncelle.TabIndex = 37;
-            this.Guncelle.Text = "Kişiyi Güncelle";
+            this.Guncelle.Text = "KİŞİYİ GÜNCELLE";
             this.Guncelle.UseVisualStyleBackColor = false;
             this.Guncelle.Click += new System.EventHandler(this.Guncelle_Click);
             // 
@@ -358,14 +368,17 @@
             this.SifreDegistirme.Text = "Şifreyi Değiştir";
             this.SifreDegistirme.Click += new System.EventHandler(this.SifreDegistirme_Click);
             // 
-            // pictureBox1
+            // basincdeger
             // 
-            this.pictureBox1.Image = global::Patient_Tracking.Properties.Resources.Adsız;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(118, 109);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.basincdeger.BackColor = System.Drawing.Color.CadetBlue;
+            this.basincdeger.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.basincdeger.Location = new System.Drawing.Point(1097, 789);
+            this.basincdeger.Name = "basincdeger";
+            this.basincdeger.Size = new System.Drawing.Size(238, 48);
+            this.basincdeger.TabIndex = 39;
+            this.basincdeger.Text = "BASINÇ DEĞERİNİ GETİR";
+            this.basincdeger.UseVisualStyleBackColor = false;
+            this.basincdeger.Click += new System.EventHandler(this.basincdeger_Click);
             // 
             // Anasayfa
             // 
@@ -373,6 +386,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1365, 849);
+            this.Controls.Add(this.basincdeger);
             this.Controls.Add(this.SifreDegistirme);
             this.Controls.Add(this.Guncelle);
             this.Controls.Add(this.Welcomelabel);
@@ -406,8 +420,8 @@
             this.Load += new System.EventHandler(this.Anasayfa_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.HastalariGoruntule)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HastalariGoruntule)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -444,5 +458,6 @@
         private System.Windows.Forms.Label Welcomelabel;
         private System.Windows.Forms.Button Guncelle;
         private System.Windows.Forms.Label SifreDegistirme;
+        private System.Windows.Forms.Button basincdeger;
     }
 }

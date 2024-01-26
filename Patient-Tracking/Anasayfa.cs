@@ -10,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using InTheHand.Net.Sockets;
+using InTheHand.Net.Bluetooth;
 
 
 namespace Patient_Tracking
@@ -272,5 +274,58 @@ namespace Patient_Tracking
             // SifreChange formunu gösterin
             sifreChangeForm.Show();
         }
+
+        private void basincdeger_Click(object sender, EventArgs e)
+        {
+            List<BluetoothDeviceInfo> connectedDevices = GetConnectedBluetoothDevices();
+
+            if (connectedDevices.Count > 0)
+            {
+                StringBuilder message = new StringBuilder("Bağlı Bluetooth Cihazlar , Basınç Değeri Bekleniyor...:\n");
+
+                foreach (var device in connectedDevices)
+                {
+                    message.AppendLine($"{device.DeviceName} ({device.DeviceAddress})");
+                }
+
+                MessageBox.Show(message.ToString(), "Bluetooth Bağlantısı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Bağlı Bluetooth cihaz bulunamadı.", "Bluetooth Bağlantısı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private List<BluetoothDeviceInfo> GetConnectedBluetoothDevices()
+        {
+            List<BluetoothDeviceInfo> connectedDevices = new List<BluetoothDeviceInfo>();
+
+            try
+            {
+                BluetoothClient bluetoothClient = new BluetoothClient();
+
+                // Bağlı cihazları al
+                IReadOnlyCollection<BluetoothDeviceInfo> devices = bluetoothClient.DiscoverDevices();
+
+                foreach (BluetoothDeviceInfo device in devices)
+                {
+                    // Cihaz bağlıysa ekle
+                    if (device.Connected)
+                    {
+                        connectedDevices.Add(device);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Bluetooth cihazları alınırken bir hata oluştu: " + ex.Message, "Bluetooth Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return connectedDevices;
+        }
+
+
+
+
     }
 }
